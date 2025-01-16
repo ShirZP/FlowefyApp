@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "FlowerfyApp",
+    "slug": "FlowerfyApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/flowerfyApp_logo.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/flowerfyApp_logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/flowerfyApp_logo.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/flowerfyApp_logo.png"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "flowerfyapp",
+  "license": "0BSD",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-react-native": "^1.0.0",
+    "axios": "^1.7.9",
+    "expo": "~52.0.25",
+    "expo-image-picker": "~16.0.4",
+    "expo-status-bar": "~2.0.1",
+    "react": "18.3.1",
+    "react-native": "0.76.6",
+    "react-native-modal": "^13.0.1",
+    "react-native-tflite": "^0.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@types/axios": "^0.14.4",
+    "@types/react": "~18.3.12",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.3.3"
+  },
+  "private": true
+}
