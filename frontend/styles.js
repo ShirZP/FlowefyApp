@@ -1,63 +1,89 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+    width: '100%',
+    height: '100%',
+  },
+  backgroundImage: {
+    opacity: 0.6, // הופך את הרקע לכהה
+    
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#f9f9f9',
+    //backgroundColor: '#f9f9f9',
   },
 
   // Header
   header: {
-    fontSize: 24,
+    fontSize: 50,
     fontWeight: 'bold',
     color: '#6a1b9a', // סגול
-    marginBottom: 30,
+    textAlign: 'center',
+    marginBottom: 40,
   },
 
   // Buttons
+  // Round Button - עיגול מושלם
   roundButton: {
-    backgroundColor: '#9c27b0', // סגול כהה
-    borderRadius: 100,
-    padding: 20,
+    backgroundColor: '#B990E4', // סגול כהה
+    borderRadius: 125, // חצי מהרוחב והגובה
+    height: 250, // גובה הכפתור
+    width: 250, // רוחב הכפתור
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 40,
-    width: 250,
+    shadowColor: '#000', // צל
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5, // אפקט הצל
   },
-  rectButton: {
-    backgroundColor: '#43a047', // ירוק
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 10,
-    marginBottom: 20,
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '80%',
+    marginHorizontal: '10%',
+    marginTop: 30,
   },
-  actionButton: {
-    backgroundColor: '#ec407a', // ורוד
-    paddingVertical: 15,
-    paddingHorizontal: 30,
+  iconButton: {
+    flex: 1,
+    alignItems: 'center',
+    marginHorizontal: 10,
+    padding: 15,
     borderRadius: 10,
-    marginTop: 10,
+    backgroundColor: '#f0f0f0',
+    elevation: 2,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
   },
-
   // Image
   image: {
-    width: 250,
-    height: 250,
-    marginVertical: 20,
+    width: 300,
+    height: 450,
     borderRadius: 10,
-    borderWidth: 2,
-    borderColor: '#9c27b0', // סגול כהה
+    marginBottom: 20,
+    alignSelf: 'center',
   },
-
+  icon: {
+    width: 40,
+    height: 40,
+    marginBottom: 10,
+  },
+  iconButtonText: {
+    fontSize: 12,
+    color: '#333',
+    textAlign: 'center',
+  },
   // Modal (Popup)
   modalView: {
     flex: 1,
@@ -72,7 +98,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)', // רקע כהה למעבר שקוף
   },
   pickerContent: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ece4e4',
     width: 300,
     borderRadius: 15,
     padding: 20,
@@ -95,7 +121,7 @@ const styles = StyleSheet.create({
   pickerButton: {
     alignItems: 'center',
   },
-  icon: {
+  iconPicker: {
     width: 50,  // התאמת גודל האייקון
     height: 50, // התאמת גודל האייקון
   },
@@ -107,9 +133,9 @@ const styles = StyleSheet.create({
 
   // Prediction Text
   predictionText: {
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: 'bold',
-    color: '#ec407a', // ורוד
+    color: '#6a1b9a',
     marginBottom: 20,
   },
 
