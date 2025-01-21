@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     opacity: 0.6, // הופך את הרקע לכהה
-    
   },
   container: {
     flex: 1,
@@ -73,6 +72,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
     alignSelf: 'center',
+    borderWidth: 6,
+    borderColor: '#B990E4',
   },
   icon: {
     width: 40,
@@ -112,33 +113,24 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   pickerButtonsContainer: {
-    flexDirection: 'row',  // הצגת כפתורים בשורה
-    justifyContent: 'space-around',  // פיזור שווה של הכפתורים
-    width: '100%',  // מתיחה לרוחב המיכל
-    paddingHorizontal: 20,  // רווח צדדי
-    marginTop: 10,  // רווח מהאלמנט הקודם
+    flexDirection: 'row',  
+    justifyContent: 'space-around', 
+    width: '100%',
+    paddingHorizontal: 20,
+    marginTop: 10, 
   },
   pickerButton: {
     alignItems: 'center',
   },
   iconPicker: {
-    width: 50,  // התאמת גודל האייקון
-    height: 50, // התאמת גודל האייקון
+    width: 50, 
+    height: 50,
   },
   pickerButtonText: {
-    color: '#000', // צבע טקסט שחור
-    fontSize: 12,  // גודל טקסט קטן
+    color: '#000',
+    fontSize: 12,
     marginTop: 5,
   },
-
-  // Prediction Text
-  predictionText: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: '#6a1b9a',
-    marginBottom: 20,
-  },
-
   // close icon X
   closeIcon: {
     position: 'absolute',
@@ -155,6 +147,39 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  pickerOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  pickerContent: {
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 20,
+    alignItems: 'center',
+    width: '90%',
+  },
+  predictionHeader: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+    color: '#6a1b9a', // סגול
+  },
+  modalImage: {
+    width: 200,
+    height: 200,
+    borderRadius: 10,
+    borderWidth: 4,
+    borderColor: '#B990E4',
+    marginBottom: 20,
+  },
+  predictionInfo: {
+    fontSize: 18,
+    textAlign: 'left',
+    lineHeight: 24,
   },
 });
 

@@ -16,6 +16,7 @@ import styles from './styles';
 export default function App() {
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [prediction, setPrediction] = useState<string | null>(null);
+  const [predictionInfo, setPredictionInfo] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isPickerVisible, setIsPickerVisible] = useState(false);
@@ -42,28 +43,31 @@ export default function App() {
 
   const uploadImage = async () => {
     if (!imageUri) return;
-
+  
     const formData = new FormData();
     formData.append('image', {
       uri: imageUri,
       name: 'image.jpg',
       type: 'image/jpeg',
     } as any);
-
+  
     try {
       setLoading(true);
-      const response = await axios.post('http://192.168.5.80:5000/predict', formData, {
+      const response = await axios.post('http://192.168.54.199:5000/predict', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-      setPrediction(response.data.flower);
+      setPrediction(response.data.flower); // flower name
+      setPredictionInfo(response.data.info); // המידע על הפרח
       setIsModalVisible(true);
     } catch (error) {
       console.error('Error uploading image:', error);
       setPrediction('Error occurred while predicting');
+      setPredictionInfo('');
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <ImageBackground
@@ -120,18 +124,27 @@ export default function App() {
           >
             <View style={styles.pickerOverlay}>
               <View style={styles.pickerContent}>
+                {/* Close Button */}
                 <TouchableOpacity
                   style={styles.closeIcon}
                   onPress={() => setIsModalVisible(false)}
                 >
                   <Text style={styles.closeIconText}>X</Text>
                 </TouchableOpacity>
-                <Text style={styles.predictionText}>{prediction}</Text>
+                
+                {/* Flower Name as Title */}
+                <Text style={styles.predictionHeader}>{prediction}</Text>
+                
+                {/* Uploaded Image */}
+                {imageUri && (
+                  <Image source={{ uri: imageUri }} style={styles.modalImage} />
+                )}
+                {/* Flower Info */}
+                <Text style={styles.predictionInfo}>{predictionInfo}</Text>
               </View>
             </View>
           </Modal>
         )}
-
 
         {/* Image Picker Modal */}
         {isPickerVisible && (
