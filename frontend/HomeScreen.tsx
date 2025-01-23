@@ -53,7 +53,7 @@ export default function App() {
   
     try {
       setLoading(true);
-      const response = await axios.post('http://192.168.54.199:5000/predict', formData, {
+      const response = await axios.post('http://192.168.150.165:5000/predict', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setPrediction(response.data.flower); // flower name
