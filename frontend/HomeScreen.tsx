@@ -53,11 +53,11 @@ export default function App() {
   
     try {
       setLoading(true);
-      const response = await axios.post('http://192.168.150.165:5000/predict', formData, {
+      const response = await axios.post('http://192.168.5.80:5000/predict', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setPrediction(response.data.flower); // flower name
-      setPredictionInfo(response.data.info); // המידע על הפרח
+      setPredictionInfo(response.data.info); // flower info
       setIsModalVisible(true);
     } catch (error) {
       console.error('Error uploading image:', error);
